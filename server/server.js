@@ -141,7 +141,7 @@ app.delete('/usuario/:id', function(req, res) {
 //process.env.URL_DB url de la base de datos para distinguir entre ambientes DEV/PROD
 mongoose.connect(process.env.URL_DB, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
     if (err) {
-        throw new Error(err);
+        console.log(err);
     } else {
         console.log("DB : ONLINE");
     }
