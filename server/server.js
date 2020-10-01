@@ -137,15 +137,24 @@ app.delete('/usuario/:id', function(req, res) {
 
 });
 
+//let username = "cjaramillo";
+let password = "xTgKHMjXat6dev9j";
+
+
+
 //{ useNewUrlParser: true, useUnifiedTopology: true }
 //process.env.URL_DB url de la base de datos para distinguir entre ambientes DEV/PROD
-mongoose.connect(process.env.URL_DB, { useNewUrlParser: true, useUnifiedTopology: true }, (err) => {
-    if (err) {
-        console.log(err);
-    } else {
+mongoose.connect(process.env.URL_DB, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+        useFindAndModify: false,
+        useCreateIndex: true,
+        password
+    })
+    .then(() => {
         console.log("DB : ONLINE");
-    }
-});
+    })
+    .catch(err => console.log('Caught', err.stack));
 
 
 app.listen(process.env.PORT, () => {
