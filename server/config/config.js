@@ -1,13 +1,15 @@
+/*
+    VARIABLES DE ENTORNO Y CONFIGURACION GLOBAL
+*/
+
 //=======================
 //puerto
 //=======================
 process.env.PORT = process.env.PORT || 3000;
 
-
 //=======================
 //entorno/ambiente
 //=======================
-
 process.env.NODE_ENV = process.env.NODE_ENV || 'DEV';
 
 //=======================
@@ -18,6 +20,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'DEV';
 // 24 horas
 // 30 dias
 process.env.DUE_DATE = 60 * 60 * 24 * 100;
+
 //=======================
 //SEED de autenticacion 
 //=======================
@@ -34,12 +37,10 @@ if (process.env.NODE_ENV === 'DEV') {
 } else {
     urlDB = process.env.MONGO_URL;
 }
-
 process.env.URL_DB = urlDB;
 
 
 //=======================
 // Google Client ID
 //=======================
-
-process.env.CLIENT_ID = process.env.CLIENT_ID || "687741038529-vt2ohn7j079m46c47ncjut9c87d42t26.apps.googleusercontent.com";
+process.env.CLIENT_ID = process.env.CLIENT_ID || '687741038529-53fl25dvru94gidddmetepbesu0sik5p.apps.googleusercontent.com';
