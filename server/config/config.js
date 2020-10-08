@@ -10,6 +10,18 @@ process.env.PORT = process.env.PORT || 3000;
 
 process.env.NODE_ENV = process.env.NODE_ENV || 'DEV';
 
+//=======================
+//vencimiento de token
+//=======================
+// 60 segundos
+// 60 minutos
+// 24 horas
+// 30 dias
+process.env.DUE_DATE = 60 * 60 * 24 * 100;
+//=======================
+//SEED de autenticacion 
+//=======================
+process.env.SEED_TOKEN = process.env.SEED_TOKEN || "seed-de-token-for-nodejs-dev";
 
 //=======================
 //Base de datos 
@@ -18,7 +30,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'DEV';
 let urlDB;
 
 if (process.env.NODE_ENV === 'DEV') {
-    urlDB = 'mongodb://localhost:27017/' + dbname;
+    urlDB = 'mongodb://localhost:27017/bd_cafe';
 } else {
     urlDB = process.env.MONGO_URL;
 }
